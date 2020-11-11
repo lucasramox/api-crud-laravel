@@ -16,4 +16,4 @@ use App\Http\Controllers\UserController;
 */
 
 Route::post('/create', [UserController::class,'store']);
-Route::put('/update', [UserController::class,'update']);
+Route::put('/update/{id}', [UserController::class,'update']);

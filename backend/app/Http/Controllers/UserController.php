@@ -76,17 +76,12 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $usuarios = new usuarios;
 
-        $usuarios->validate([
-            'nome'=>'required',
-            'email'=>'required',
-            'idade'=>'required',
-        ]);
+        // $usuarios->nome = $request->nome;
         
-        $usuarios = DB::table('usuarios')
-              ->where('id', 1)
-              ->update(['nome' => 'lucas', 'email' => 'jj@jjj', 'idade' => '5']);
+        DB::table('usuarios')
+            ->where('id', $id)
+            ->update(['nome' => $request->nome]);
         
         return $request;
         
