@@ -16,4 +16,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::post('/create', [UserController::class,'store']);
+
 Route::put('/update/{id}', [UserController::class,'update']);
+
+Route::delete('/delete/{id}', [UserController::class,'destroy']);

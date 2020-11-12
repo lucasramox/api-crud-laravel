@@ -81,9 +81,9 @@ class UserController extends Controller
         
         DB::table('usuarios')
             ->where('id', $id)
-            ->update(['nome' => $request->nome]);
+            ->update(['nome' => $request->nome, 'email' => $request->email, 'idade' => $request->idade]);
         
-        return $request;
+            return $request;
         
     }
 
@@ -95,6 +95,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+    
+        DB::table('usuarios')->where('id', $id)->delete();
+       
     }
+
+    
 }
